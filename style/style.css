@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #0a0a0c;
+  color: #e4e4e7;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.app-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #1f2024;
+}
+
+.app-title {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+}
+
+.dollar-card {
+  background-color: #121215;
+  border: 1px solid #1f2024;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.currency-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.currency-ticker {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f4f4f5;
+}
+
+.currency-value {
+  font-family: "SF Mono", SFMono-Regular, Consolas, monospace;
+  font-size: 28px;
+  font-weight: 500;
+  color: #4ade80;
+}
+
+.usd-button {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  color: #e4e4e7;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.usd-button:hover {
+  background-color: #27272a;
+  border-color: #3f3f46;
+  color: #ffffff;
+}
+
+.usd-button:active {
+  transform: scale(0.98);
+}
+
+.refresh-icon {
+  width: 14px;
+  height: 14px;
+  color: #71717a;
+  transition: transform 0.3s ease;
+}
+
+.usd-button:hover .refresh-icon {
+  color: #ffffff;
+  transform: rotate(45deg);
+}
