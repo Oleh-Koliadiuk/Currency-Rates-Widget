@@ -1,30 +1,28 @@
-# Dollar Exchange Rate Widget
+# Multi-Currency Exchange Rates Dashboard
 
-A minimalist web application that tracks and displays the official USD to UAH exchange rate in real-time. The system implements a strict tech-minimalism layout combined with a decoupled JavaScript module design pattern.
+A minimalist, high-performance web dashboard that tracks and displays real-time exchange rates for global currencies (USD, EUR, PLN) relative to the Ukrainian Hryvnia (UAH). The system leverages a decoupled ES6 module layout and component-based presentation layers.
 
-## Product Specification
+## Technical Specifications
 
-### Core Mechanics
+### Core Architecture & Mechanics
 
-- **Data Integration**: Fetches real-time financial data directly from the official National Bank of Ukraine (NBU) API.
-- **Asynchronous Flow**: Uses modern `async/await` syntax to handle API network responses without blocking the browser thread.
-- **Dynamic DOM Mutation**: Intercepts the response data payload and injects formatting values directly into target layout nodes.
+- **Data Integration**: Fetches real-time financial data payloads via an asynchronous controller utilizing the Open Exchange Rates API.
+- **Cross-Rate Calculations**: Dynamically computes cross-rates for EUR and PLN based on USD-centric API nodes relative to UAH.
+- **Asynchronous Execution**: Implements modern `async/await` syntax to handle network requests efficiently without blockages in the runtime thread.
 
-## Presentation Layer & Layout
+## Presentation Layer & CSS Architecture
 
-- **Theme Concept**: Dark tech-minimalism using slate backgrounds (`#0a0a0c`), subtle structural borders, and monospace font sizing (`SF Mono`) for numerical layout stability.
-- **Interactive UI Modules**: Features a standalone asset container featuring structural SVG vector elements and hover state button scales.
+- **Component-Based Styling**: Replaces redundant card definitions with a singular, optimized `.currency-card` pattern to maintain a minimal codebase.
+- **Grid Coordination**: Utilizes a centralized flexbox container layout (`.currency-container`) for fluid responsiveness across varied viewports.
+- **Theme Concept**: Strict tech-minimalism using slate background configurations (`#0a0a0c`), low-contrast structural dividers, and numeric stabilization via monospace sizing.
 
-## Deployment
+## File Structure
 
-### Prerequisites
-
-A modern browser runtime environment supporting HTML5 document trees, ES6 native modules, and CORS network protocols.
-
-### File Architecture
-
-- `index.html` (Application Layout DOM Blueprint)
-- `.gitignore` (Git exclusion configurations)
-- `style/style.css` (Presentation & Monochromatic Layout)
-- `src/app.js` (Main Core UI Orchestrator & Event Listeners)
-- `src/api.js` (NBU Endpoint Communication & Fetch Controller)
+```text
+├── index.html          # Application Blueprint & DOM Nodes
+├── style/
+│   └── style.css       # Layout Logic & Typography Context
+└── src/
+    ├── api.js          # API Endpoint Controller & Fetch Controller
+    └── app.js          # UI Orchestration & Event Injections
+```

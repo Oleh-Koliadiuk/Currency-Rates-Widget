@@ -1,19 +1,28 @@
 import { getCourse } from "./api.js";
 
-const valueSpan = document.getElementById("value");
-const refreshButton = document.getElementById("USD-button");
+const button = document.getElementById("refresh-all-button");
+const usdEl = document.getElementById("usd-value");
+const eurEl = document.getElementById("eur-value");
+const plnEl = document.getElementById("pln-value");
 
 async function updateUI() {
-  try {
+  const data = await getCourse();
 
-    const rate = await getCourse();
+  if (!data) return;
 
-    valueSpan.textContent = `${rate.toFixed(2)} UAH`;
-  } catch (error) {
-    valueSpan.textContent = "Error on the server";
-  }
-};
+  const uah = data.rates.UAH;
+  const eur = data.rates.EUR;
+  const pln = data.rates.PLN;
+
+  const usdToUah = uah.toFixed(2);
+  const eurToUah = (uah / eur).toFixed(2);
+  const plnToUah = (uah / pln).toFixed(2);
+
+  usdEl.textContent = `${usdToUah} UAH`;
+  eurEl.textContent = `${eurToUah} UAH`;
+  plnEl.textContent = `${plnToUah} UAH`;
+}
+
+button.addEventListener("click", updateUI);
 
 updateUI();
-
-refreshButton.addEventListener('click', updateUI);

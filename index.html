@@ -3,36 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dollar Exchange | Home</title>
+    <title>Currency Rates | Home</title>
     <link rel="stylesheet" href="./style/style.css" />
     <script type="module" src="./src/app.js"></script>
   </head>
   <body>
     <div class="app-container">
       <header class="app-header">
-        <h1 class="app-title">The Dollar Exchange Rate in Ukraine</h1>
+        <h1 class="app-title">Currency Exchange Rates in Ukraine</h1>
+        <button class="refresh-button" id="refresh-all-button">
+          <span>Update</span>
+          <svg
+            class="refresh-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+          </svg>
+        </button>
       </header>
 
-      <main class="app-content">
-        <div class="dollar-card">
-          <div class="currency-info">
+      <main class="currency-container">
+        <div class="currency-card usd">
+          <div class="currency-header">
             <span class="currency-ticker">USD</span>
-            <span id="value" class="currency-value">0.00 UAH</span>
           </div>
-          <button class="usd-button" id="USD-button">
-            <span>Update</span>
-            <svg
-              class="refresh-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"
-              />
-            </svg>
-          </button>
+          <div class="currency-value" id="usd-value">00.00 UAH</div>
+        </div>
+
+        <div class="currency-card eur">
+          <div class="currency-header">
+            <span class="currency-ticker">EUR</span>
+          </div>
+          <div class="currency-value" id="eur-value">00.00 UAH</div>
+        </div>
+
+        <div class="currency-card pln">
+          <div class="currency-header">
+            <span class="currency-ticker">PLN</span>
+          </div>
+          <div class="currency-value" id="pln-value">00.00 UAH</div>
         </div>
       </main>
     </div>
